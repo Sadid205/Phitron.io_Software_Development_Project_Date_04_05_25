@@ -1,0 +1,111 @@
+/* .title1{
+    font-size: 50px;
+    color: red;
+    font-style: italic;
+}
+
+.title2{
+    font-size: 60px;
+    color: blue;
+}
+
+#description{
+    font-size: 30px;
+    color: green;
+} */
+
+
+.box{
+    width: 200px;
+    height: 50px;
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 50px;
+}
+
+.title{
+    margin: 50px;
+    color: blue;
+}
+
+
+.description{
+    font-size: 40px;
+    font-weight: bold;
+    color: goldenrod;
+    size: 50%;
+    margin: auto;
+    text-align: center;
+    /* font-style: italic; */
+    font-family: "Jersey 25 Charted", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.item{
+    display: inline;
+}
+
+.commmon{
+    width: 200px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.inner_div{
+    width: 70px;
+    height: 70px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+.box1{
+    background: green;
+    position: relative;
+}
+.box2{
+    background: skyblue;
+}
+.box3{
+
+    background: darkturquoise;
+}
+
+.parant_div{
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid goldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.child_div{
+    width: 250px;
+    height: 250px;
+    border: 1px solid gray;
+    margin: 5px;
+}
+
+
+.banner{
+    width: 500px;
+    height: 300px;
+    border: 1px solid gray;
+    margin: auto;
+    background-image: url(./images/3.jpg),linear-gradient(90deg, rgba(131,58,180,0.5) 0%, rgba(241,247,137,0.5) 47%);
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+.btn{
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    border: 1px solid gray;
+    border-radius: 20%;
+    background:linear-gradient(45deg,red,yellow);
+}
