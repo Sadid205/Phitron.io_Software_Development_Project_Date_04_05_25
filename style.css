@@ -1,0 +1,26 @@
+.box{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border: 1px solid gray;
+}
+
+.flex_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.inputField{
+    padding: 5px;
+    width: 200px;
+}
+
+.user{
+    padding: 20px;
+    border: 1px solid gray;
+    width: 400px;
+    height: 150px;
+    margin: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
