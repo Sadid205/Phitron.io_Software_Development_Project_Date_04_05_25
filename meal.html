@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="meal.css">
+</head>
+<body>
+    <h1 class="text-center fs-3 text-capitalize text-info fw-bold mt-2">Welcome to Food-Village Restaurant</h1>
+    <div id="product_details_outer" class="m-auto shadow-lg mb-3 p-4 w-75 border border-1 rounded rounded-3">
+        <h3 class="text-center text-danger">Product Details</h3>
+        <div id="product_details">
+
+        </div>
+    </div>
+    <div class="d-flex search_and_button" style="height: 50vh;">
+        <div class="search_box d-flex w-50 m-auto">
+            <div class="input_field input-group">
+                <input id="user_input" class="form-control" type="text" placeholder="Find your favorite food">
+            </div>
+            <div class="search_btn">
+                <button id="search_btn" onclick="getAllProduct()" class="btn btn-info fw-bold">Search</button>
+            </div>
+        </div>
+    </div>
+    <div id="prd_list" class="product_list row d-flex justify-content-center">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="meal.js"></script>
+</body>
+</html>
