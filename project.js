@@ -30,7 +30,7 @@ const show_products = (products)=>{
                     <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div id="modal_body" class="modal-body">
+                  <div id="modal_body" class="modal-body row">
                     
                   </div>
                   <div class="modal-footer">
@@ -74,10 +74,10 @@ const getDetails = (id)=>{
     .then((data)=>{
        const modal_body = document.getElementById("modal_body");
        modal_body.innerHTML = `
-            <div class="col-md-6 d-flex align-items-center">
-                <img class="w-75" src="${data.image}"></img>
+            <div class="col-md-6 col-sm-12 d-flex align-items-center">
+                <img class="m-auto w-75" src="${data.image}"></img>
             </div>
-           <div class="px-2 col-md-6">
+           <div class="px-2 col-md-6 col-sm-12">
                 <h3 class="fs-5"><span class="fs-bold fw-3">Title</span> : ${data.title}</h3>
                 <h4><span class="fw-bold">Category</span> : ${data.category}</h4>
                 <p><span class="fw-bold">Description : </span>${data.description}</p>
