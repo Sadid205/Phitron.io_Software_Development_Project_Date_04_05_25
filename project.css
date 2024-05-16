@@ -11,12 +11,9 @@
 }
 
 .cart_div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    box-shadow: 8px 8px 8px rgb(0, 0, 0,0.2);
+    width: 40%;
 }
+
 .prd_div{
     width: 250px;
     height: 300px;
@@ -38,7 +35,7 @@
     height: 50%;
 }
 
-button{
+/* button{
     background: blue;
     border: none;
     padding: 10px;
@@ -48,8 +45,24 @@ button{
 }
 button:hover{
     cursor: pointer;
-}
+} */
 .btn_cls{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart_div{
+    width: 100%;
+    padding: 10px;
+    box-shadow: 4px 4px 4px rgb(0, 0, 0,0.2);
+}
+.cart_div h3{
+    font-size:medium;
+}
+.cart_div p{
+    font-weight: bold;
+}
+#modal_body{
     display: flex;
     justify-content: space-between;
 }
