@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsDB</title>
+
+    <link rel="stylesheet" href="index.css">;
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+    ">;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img width="100" src="./img/logo.png" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Pricing</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="banner bg-primary">
+        <div class="input_field input-group h-100  d-flex justify-content-center align-items-center text-center">
+           <div class="w-50">
+            <input id="search_input" class="form-control" type="text" placeholder="Enter player name">
+           </div>
+           <div>
+            <button onclick="searchByName()" class="btn btn-info">Search</button>
+           </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div id="modal_body" class="modal-body">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="all_players" class="all_players d-flex row">
+          <div class="col-md-9">
+                <h1 class="text-center">Players List</h1>
+              <div id="all_teams" class="gap-4 d-flex flex-wrap justify-content-center">
+      
+              </div>
+          </div>
+          <div class="col-md-3 shadow-lg">
+                <h1 class="text-center">Group</h1>
+                <p class="text-center fw-bold">Total Player : <span id="total_cnt">0</span></p>
+              <div class="group_div" id="group_div">
+
+              </div>
+          </div>
+    </div>
+    <div class="footer d-flex justify-content-around align-items-center">
+      <div class="list-unstyled">
+        <li class="fw-bold text-dark">Home</li>
+        <li class="fw-bold text-dark">News</li>
+        <li class="fw-bold text-dark">Sport</li>
+      </div>
+      <div class="list-unstyled">
+        <li class="fw-bold text-dark">Business</li>
+        <li class="fw-bold text-dark">Innovation</li>
+        <li class="fw-bold text-dark">Culture</li>
+      </div>
+      <div class="list-unstyled">
+        <li class="fw-bold text-dark">Travel</li>
+        <li class="fw-bold text-dark">Earth</li>
+        <li class="fw-bold text-dark">Video</li>
+      </div>
+      <div class="list-unstyled">
+        <li class="fw-bold text-dark">Live</li>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script src="app.js"></script>;
+</body>
+</html>
