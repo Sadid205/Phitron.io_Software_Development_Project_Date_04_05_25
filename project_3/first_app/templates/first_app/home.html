@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Project 3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       <h1>This is home page.</h1>
+       <h1>Author : {{author}}</h1>
+       <h1>Age : {{age}}</h1>
+       <h1>{{lst}}</h1>
+
+        {{lst}}
+        <h1>{{lst | join:" - "}}</h1>
+        <h1>{{birthday | date:"D d M Y"}}</h1>
+        {% comment %} <h1>{{val | default:"an empty string"}}</h1> {% endcomment %}
+        <h1>{{"Happy coding. Python is fun." | truncatewords:2}}</h1>
+        <h1>{{"Python is Fun" | cut:" "}}</h1>
+        <h1>{{"val" | length}}</h1>
+        {% if age >= 20 %}
+            <h4>You will get driving license</h4>
+        {% elif age >= 10 and age <= 19 %}
+            <h4>You will not get driving license</h4>
+        {% else %}
+            <h4>You're a child </h4>
+        {% endif %} 
+
+        <!-- For loop -->
+        {% for i in courses %}
+        <h3>{{i.id}} {{i.name}} {{i.fee}}</h3>
+        {% endfor %}
+    </body>
+</html>
