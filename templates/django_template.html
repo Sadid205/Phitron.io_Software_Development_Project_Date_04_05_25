@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ProjectHome</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>This is template filter page</h1>
+        <a href="/">Project Home Page</a>
+        <a style="margin-left:5px" href="/template">Template Filters</a>
+        <a style="margin-left:5px" href="/first_app">App Home Page</a>
+        <a style="margin-left:5px" href="/first_app/contact">App Contact Page</a>
+        {% comment %} List Length {% endcomment %}
+        <h1>Total Course : {{courses|length}}</h1>
+        {% comment %} Add  {% endcomment %}
+        <h3>Age : {{age|add:"5"}}
+        {% comment %} Add Slashes {% endcomment %}
+        <h4>Name : {{name|addslashes}}
+        {% comment %} capfirst {% endcomment %}
+        <h4>Author : {{author|capfirst}}
+        {% comment %} center {% endcomment %}
+        <h4>Center : {{center|center:"15"}}
+        {% comment %} cut {% endcomment %}
+        <h5>Cut{{str|cut:" "}}
+        {% comment %} date {% endcomment %}
+        <h2>{{birthday|date:"D d M Y"}}</h2>
+        {% comment %} default {% endcomment %}
+        <h2>{{defalult|default:"None"}}
+        {% comment %} dictsort {% endcomment %}
+        <h2>{{list_of_name|dictsort:"age"}}
+        {% comment %} divisibleby {% endcomment %}
+        <h2>{{age|divisibleby:"9"}}
+        {% comment %} escape {% endcomment %}
+        <h2>{{project|escape}}
+        {% comment %} filesizeformat {% endcomment %}
+        <h2>{{value|filesizeformat}}
+        {% comment %} first {% endcomment %}
+        <h2>{{list_of_name|first}}
+        {% comment %} join {% endcomment %}
+        <h2>{{list1|join:" // "}}
+         {% comment %} last {% endcomment %}
+         <h2>{{list_of_name|last}}
+         {% comment %} length {% endcomment %}
+         <h2>{{list_of_name|length}}
+         {% comment %} linenumbers {% endcomment %}
+         <h2>{{numbers|linenumbers}}
+         {% comment %} lower {% endcomment %}
+         <h2>{{str|lower}}
+         {% comment %} lower {% endcomment %}
+         <h2>{{str|make_list}}
+         {% comment %} random {% endcomment %}
+         <h2>{{numbers|random}}
+         {% comment %} slice {% endcomment %}
+         <h2>{{numbers|slice:":2"}}
+         {% comment %} slugify {% endcomment %}
+         <h2>{{str|slugify}}
+         {% comment %} time {% endcomment %}
+         <h2>{{birthday|time:"H:i"}}
+         {% comment %} timesince {% endcomment %}
+         {% comment %} <h2>{{birthday|timesince:"birthday"}} {% endcomment %}
+         {% comment %} title {% endcomment %}
+         <h2>{{center|title}}
+         {% comment %} unordered_list {% endcomment %}
+         <h2>{{states|unordered_list}}
+          {% comment %} slugify {% endcomment %}
+         <h2>{{str|slugify}}
+        {% comment %} upper {% endcomment %}
+        <h2>{{str|upper}}
+        {% comment %} wordcount {% endcomment %}
+        <h2>{{str|wordcount}}
+        {% comment %} Date Filter {% endcomment %}
+        <h2>{{birthday|date:"SHORT_DATE_FORMAT"}}
+        {% comment %} Date Filter {% endcomment %}
+        <h2>{{birthday|date}}
+        {% comment %} Cut Filter {% endcomment %}
+        <h2>{{str|cut:" "}}</h2>
+        {% comment %} Escape {% endcomment %}
+        {% comment %} {% for i in linenumbers %}:
+            <h3>{{i|linenumbers}}</h3>
+        {% endfor %} {% endcomment %}
+        {{linenumber|linenumbers }}
+         {% comment %} Timesince {% endcomment %}
+         <h2>{{birthday|timesince}}</h2>
+         {% comment %} Timesince {% endcomment %}
+         <h2>You have {{num_messages}} message{{num_messages|pluralize}}</h2>
+    </body>
+</html>
