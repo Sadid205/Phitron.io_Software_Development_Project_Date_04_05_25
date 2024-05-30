@@ -24,7 +24,6 @@ def FormField(request):
         geeksForm = forms.GeeksForm(request.POST)
         if geeksForm.is_valid():
             geeksForm.save()
-            print(geeksForm.cleaned_data)
             return redirect('FormField')
     else:
         geeksForm = forms.GeeksForm()
