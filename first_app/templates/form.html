@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{form|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{commentForm|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{Form_widget_attribute|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{EmailForm|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{BoolField|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{DatField|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{DateWithField|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{DateWithSelect|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{Decimal|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{max|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{labelWith|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{initial|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{initialBool|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{initialDate|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{multipleChoices|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg ">
+        <h3 class>Contact us</h3>
+        {{radioSelect|crispy}}
+        <button type='submit' class='btn btn-primary mt-4'>Submit</button>
+    </form>
+    <form style="width:50%;margin:auto;"class="border-top mt-4 rounded-1 border-primary border-4 p-5 shadow-lg " method="post">
+        <h3 class>Contact us</h3>
+        {% csrf_token %}
+        {{geeksForm|crispy}}
+        <button type="submit" class='btn btn-primary mt-4'>Submit</button>
+    </form>
+</div>
+{% endblock %}
