@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div style="height:100vh" class="d-flex align-items-center">
+    <form style="width:50%;margin:auto;" class="shadow-lg p-4" method="post">
+        {% csrf_token %}
+        <h1 class="text-center">Add Album</h1>
+        {{Form|crispy}}
+        <button class="btn btn-info w-100">Submit</button>
+    </form>
+</div>
+{% endblock %}
