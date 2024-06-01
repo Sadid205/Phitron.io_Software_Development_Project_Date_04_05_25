@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mt-4 fw-bold">Your All Tasks</h2>
+<div class="d-flex justify-content-center flex-wrap">
+    {% for Task in Tasks %}
+    <div class="card border-0 p-2 m-4 shadow-lg" style="width: 18rem;">
+        <div class="card-body">
+            <p class="fw-bold">Task id : {{Task.id}}</p>
+            <p class="fw-bold">Task Assigned Date : {{Task.TaskAssignDate}}</p>
+            <p class="fw-bold">Task Description  : {{Task.TaskDescription}}</p>
+            <p class="fw-bold">Category : {% for Category in Task.Category.all %}
+              <a class="btn btn-sm disabled">{{Category.CategoryName}}</a>
+              {% endfor %}</p>
+            <br/>
+           {% if Task.isCompleted == False%}
+          <div class="mt-3">
+            <a href="{% url 'editTask' Task.id %}" class="btn fw-bold btn-warning">Edit</a>
+            <a href="{% url 'deleteTask' Task.id %}" class="btn fw-bold btn-info">Delete</a>
+          </div>
+           {% else %}
+           <h3 class="text-center fw-bold">Completed</h3>
+           {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}
