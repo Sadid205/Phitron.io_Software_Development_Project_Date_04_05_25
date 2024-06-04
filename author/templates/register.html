@@ -3,9 +3,9 @@
 {% block content %}
 
 <form style="width:50%;margin:auto" method="post">
-    <h1 class="text-center" >Add author page</h1>
+    <h1 class="text-center" >{{type}}</h1>
     {% csrf_token %}
     {{form | crispy}}
-    <button class="btn btn-warning">Submit</button>
+    <button class="btn btn-warning mb-5">Submit</button>
 </form>
 {% endblock %}
