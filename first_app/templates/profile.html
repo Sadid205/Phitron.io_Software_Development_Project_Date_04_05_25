@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if messages %}
+{% for m in messages %}
+<p class="text-{{m.tags}} bg-info fs-4  p-4 text-center">{{m}}</p>
+{% endfor %}
+{% endif %}
+<h1 class="text-center">This is profile page form first app</h1>
+<div class="mt-4">
+<a href="{% url 'change_pass_with' %}" class="btn btn-warning" >Change Password With Previous Password</a>
+<a href="{% url 'change_pass_without' %}" class="btn btn-danger mx-3" >Change Password Without Previous Password</a>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form style="width:50%;margin:auto;" method="post">
+    <h1 class="text-center">{{Title}}</h1>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    {% for er in non_field_errors %}
+    <p class="bg-danger text-white">{{er}}</p>
+    {% endfor %}
+    {% endif %}
+    <!-- {{form|crispy}} -->
+    {% for fm in form %}
+    {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}
+    {% endfor %}
+    <button class='btn mt-3 btn-info' type='submit'>Submit</button>
+</form>
+{% endblock %}

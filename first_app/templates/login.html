@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if messages %}
+{% for m in messages %}
+<p class="text-{{m.tags}} bg-warning text-center p-4 fs-4">{{m}}</p>
+{% endfor %}
+{% endif %}
+<form style="width:50%;margin:auto;" method="post">
+    <h1 class="text-center">{{Title}}</h1>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    {% for er in non_field_errors %}
+    <p class="bg-danger text-white">{{er}}</p>
+    {% endfor %}
+    {% endif %}
+    <!-- {{form|crispy}} -->
+    {% for fm in form %}
+    {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}
+    {% endfor %}
+    <button class='btn mt-3 btn-info' type='submit'>{{button}}</button>
+</form>
+{% endblock %}
