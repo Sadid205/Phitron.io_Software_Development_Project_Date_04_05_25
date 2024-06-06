@@ -34,9 +34,10 @@
       {% for post in data %}
       <div class="col-md-3 mb-3 mb-sm-0">
         <div class="card mx-2">
+          <img src="{{post.image.url}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{post.title}}</h5>
-            <p class="card-text">{{post.content}}</p>
+            <h5 class="card-title"><a class="text-decoration-none text-dark" href="{% url 'detail_post' post.id %}">{{post.title}}</a></h5>
+            <p class="card-text">{{post.content |truncatechars:10}}</p>
             <p>Author : {{post.author.first_name}} {{post.author.last_name}}</p>
             <p>
               Category : {% for cat in post.category.all %}
