@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1 class="text-center">{{Title}}</h1>
+{% if messages %}
+{% for m in messages%}
+<div class="bg-info">
+    <p class=" p-2 fw-bold text-center text-{{m.tags}}">{{m}}</p>
+</div>
+{% endfor %}
+{% endif %}
+<div class="table-responsive">
+  <table class="table table-bordered  table-hover ">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Musician Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Album Rating</th>
+        <th scope="col">Instrument Type</th>
+        <th scope="col">Album Name</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for album in Albums %}
+        <tr>
+            <td>{{album.id}}</td>
+            <td><a class="text-decoration-none text-dark" href="{% url 'edit_musician' album.Singer.id %}">{{album.Singer.FirstName}} {{album.Singer.LastName}}</a></td>
+            <td>{{album.Singer.Email}}</td>
+            <td>{{album.Rating}}</td>
+            <td>{{album.Singer.InstrumentType}}</td>
+            <td>{{album.AlbumName}}</td>
+            <td>{{album.AlbumReleaseDate}}</td>
+            <td>
+                <a href="{% url 'edit_album' album.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'delete_album' album.id %}"  class="mx-2 btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
