@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<form style="width:50%;margin:auto" method="post">
+<form enctype= 'multipart/form-data' style="width:50%;margin:auto" method="post">
     <h1 class="text-center" >Add Post page</h1>
     {% csrf_token %}
     {{form | crispy}}
