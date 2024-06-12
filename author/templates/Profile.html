@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if messages %}
+{% for m in messages  %}
+<p class="text-{{m.tags}} p-3 bg-dark text-center">{{m}}</p>
+{% endfor %}
+{% endif %}
+<div class="d-flex bg-dark p-3 align-items-center justify-content-around border border-2">
+  <div>
+    <h3 class="text-light">{{request.user.first_name}} {{request.user.last_name}}</h3>
+    <h5 class="text-light">{{request.user.email}}</h5>
+    <p class="text-light">{{request.user.username}}</p>
+  </div>
+  <div>
+    <a href="{% url 'edit_profile' %}" class="btn btn-outline-danger">Edit Profile</a>
+  </div>
+</div>
+<button class="btn mt-3 disabled fw-bold text-bg-info">{{orders|length}} Orders Found :</button>
+<div class="d-flex flex-wrap">
+    {% if orders %}
+    {% for data in orders %}
+    <div class="card m-auto shadow-lg mt-4" style="width: 18rem;">
+        <img src="{{data.car.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Car Name : {{data.car.title}}</h5>
+          <p class="card-text">Car Price : {{data.car.price}}$</p>
+          <p class="card-text">Car Brand Name : {{data.car.brand.brand_name}}</p>
+          <p class="card-text">Quantity : {{data.quantity}}</p>
+          <p class="card-text">Order Date : {{data.order_date}}</p>
+          <a href="{% url 'car_details' data.car.id %}" class="btn w-100 btn-outline-secondary">View Details</a>
+        </div>
+      </div>
+    {% endfor %}
+    {% else %}
+      <div style="width:100%">
+        <p class="text-center fw-bold">You have not placed an order</p>
+      </div>
+    {% endif %}
+</div>
+{% endblock %}

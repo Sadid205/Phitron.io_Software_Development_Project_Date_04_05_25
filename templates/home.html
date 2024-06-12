@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+{% if messages %}
+{% for m in messages  %}
+<p class="text-{{m.tags}} p-3 bg-dark text-center">{{m}}</p>
+{% endfor %}
+{% endif %}
+<div class="d-flex row justify-content-evenly flex-wrap">
+  <div class="col-md-5">
+    <h1 class="text-info-emphasis">Welcome to CAR SALES.</h1>
+    <p class="text-info">We will provide you the best cars at present.
+      Our cars are of high quality and come with 5 year free servicing warranty.
+      If you buy our car, please contact us.
+    </p>
+  </div>
+  <div class="col-md-5">
+    <img width="100%" src="{% static 'Banner.jpg' %}"/>
+  </div>
+</div>
+ <div class="container-md">
+  <h1 class="text-success">All Brand : </h1>
+  {% for brand in brands %}
+  <a href="{% url 'brand_wise_car' brand.slug %}" class="text-light border-info-subtle btn m-2 btn-outline-dark">{{brand.brand_name}}</a>
+  {% endfor %}
+</div>
+<button class="btn mt-4 disabled fw-bold text-bg-warning">{{data|length}} Results Found</button>
+{% if data %}
+<div class="d-flex flex-wrap">
+    {% for car in data %}
+    <div class="card m-auto mt-3 shadow-lg" style="width: 18rem;">
+        <img src="{{car.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Car Name : {{car.title}}</h5>
+          <p class="card-text">Car Price : {{car.price}}$</p>
+          <p class="card-text">Car Brand Name : {{car.brand.brand_name}}</p>
+          {% comment %} <p class="card-text">{{car.description|truncatewords:15}}</p> {% endcomment %}
+          <a href="{% url 'car_details' car.id %}" class="btn w-100 btn-outline-primary">View Details</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% else %}
+<div style="width:100%">
+  <p class="text-center fw-bold">This time car is not available</p>
+</div>
+{% endif %}
+ </div>
+{% endblock %}
